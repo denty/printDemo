@@ -5,7 +5,12 @@
 //  Created by broy denty on 14-8-12.
 //  Copyright (c) 2014年 denty. All rights reserved.
 //
-
+/*****************
+ 实现逻辑：
+ 在touch回调中获取移动位移，添加path使用画图方法进行绘制
+ 将图片转化为位图，touch获取path再加工位图，将加工之后的位图，转化为图片
+ 最好刷新view中的image
+ ***************/
 #import "PrintTable.h"
 
 @implementation PrintTable
@@ -19,7 +24,7 @@
     if (self) {
         self.image = [UIImage imageNamed:@"table.png"];
         // Initialization code
-        
+//        添加画布
         // initalize bitmap context
 		colorSpace = CGColorSpaceCreateDeviceRGB();
 		imageContext = CGBitmapContextCreate(0,frame.size.width,
